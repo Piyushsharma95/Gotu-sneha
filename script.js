@@ -19,35 +19,39 @@ resize();
 
 const hearts = [];
 
+const emojis = ['❤️', '💖', '💝', '💘', '💕', '✨', '🌸', '💌'];
+
 class Heart {
     constructor() {
         this.reset();
     }
     reset() {
         this.x = Math.random() * canvas.width;
-        this.y = canvas.height + 20;
-        this.size = Math.random() * 15 + 5;
-        this.speed = Math.random() * 2 + 1;
-        this.opacity = Math.random() * 0.5 + 0.3;
+        this.y = canvas.height + 50;
+        this.size = Math.random() * 25 + 15;
+        this.speed = Math.random() * 1.5 + 0.5;
+        this.opacity = Math.random() * 0.6 + 0.2;
         this.angle = Math.random() * Math.PI * 2;
-        this.wave = Math.random() * 2;
+        this.wave = Math.random() * 1.5;
+        this.emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        this.rotation = Math.random() * 0.1 - 0.05;
+        this.currRotation = Math.random() * Math.PI * 2;
     }
     update() {
         this.y -= this.speed;
         this.x += Math.sin(this.angle) * this.wave;
         this.angle += 0.02;
-        if (this.y < -20) this.reset();
+        this.currRotation += this.rotation;
+        if (this.y < -50) this.reset();
     }
     draw() {
-        ctx.fillStyle = `rgba(255, 77, 109, ${this.opacity})`;
-        ctx.beginPath();
-        const x = this.x;
-        const y = this.y;
-        const s = this.size;
-        ctx.moveTo(x, y);
-        ctx.bezierCurveTo(x - s / 2, y - s / 2, x - s, y + s / 3, x, y + s);
-        ctx.bezierCurveTo(x + s, y + s / 3, x + s / 2, y - s / 2, x, y);
-        ctx.fill();
+        ctx.save();
+        ctx.globalAlpha = this.opacity;
+        ctx.font = `${this.size}px serif`;
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.currRotation);
+        ctx.fillText(this.emoji, -this.size / 2, this.size / 2);
+        ctx.restore();
     }
 }
 

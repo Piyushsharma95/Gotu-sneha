@@ -17,12 +17,16 @@
 body {
     background: var(--dark-bg);
     font-family: 'Great Vibes', cursive;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
+    padding: 60px 20px;
 }
 
 #bg-gradient {
