@@ -26,7 +26,8 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 60px 20px;
+    padding: 20px 15px;
+    /* Reduced vertical padding */
 }
 
 #bg-gradient {
@@ -47,9 +48,11 @@ canvas {
 }
 
 .container {
-    width: 90%;
+    width: 95%;
+    /* More width on small screens */
     max-width: 600px;
-    padding: 40px;
+    padding: 30px 20px;
+    /* More compact padding */
     background: var(--glass-bg);
     backdrop-filter: blur(15px);
     border: 1px solid var(--glass-border);
@@ -107,6 +110,10 @@ h1 {
     line-height: 1.6;
     margin-bottom: 30px;
     color: #ffdce3;
+}
+
+.message p {
+    margin-bottom: 15px;
 }
 
 .heart-button {
@@ -184,4 +191,44 @@ h1 {
 
 .overlay.active .overlay-content {
     transform: scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .couple-name {
+        font-size: 1.6rem;
+    }
+
+    .message {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .couple-name {
+        font-size: 1.3rem;
+    }
+
+    .message {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .heart-button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
 }
