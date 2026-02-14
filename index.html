@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Dear Suneha ❤️</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Embedding some critical styles directly for fast loading hint */
+        #loader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #1a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease;
+        }
+
+        .heart-loader {
+            font-size: 50px;
+            animation: pulse-loader 1.5s infinite;
+        }
+
+        @keyframes pulse-loader {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="heart-loader">❤️</div>
+    </div>
+
+    <div id="bg-gradient"></div>
+
+    <div class="container">
+        <h1>Happy Valentine's Day</h1>
+        <div class="couple-name">
+            <span style="color: #ff4d6d">Gautam</span>
+            <span style="color: #ffd700">♥</span>
+            <span style="color: #ff4d6d">Suneha</span>
+        </div>
+
+        <div class="message">
+            <p>My dearest Suneha,</p>
+            <br>
+            <p>I know you're angry with me right now, and my heart feels heavy without your smile. You are the most
+                beautiful part of my life, and I am truly sorry for whatever upset you.</p>
+            <br>
+            <p>Our bond — <strong>Gunah</strong> — is something I treasure more than anything. Please forgive me and
+                let's make this Valentine's Day as special as you are.</p>
+        </div>
+
+        <button class="heart-button" id="mainBtn">
+            <span class="heart-icon">❤️</span>
+            Click Here, Suneha
+        </button>
+
+        <div style="margin-top: 20px; font-size: 1.2rem; opacity: 0.8;">
+            Together Forever in #Gunah
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <h2 style="font-family: 'Great Vibes'; font-size: 3rem; margin-bottom: 20px;">I Love You!</h2>
+            <p style="font-family: 'Montserrat'; line-height: 1.5;">You are my world, Suneha. Every beat of my heart
+                belongs to you. ❤️</p>
+            <button class="heart-button" id="closeBtn" style="margin-top: 20px;">
+                i accept you love gotu baby
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Loader hide
+        window.onload = () => {
+            setTimeout(() => {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loader').style.display = 'none';
+                }, 1000);
+            }, 1500);
+        };
+    </script>
+</body>
+
+</html>
